@@ -1,6 +1,7 @@
-# Welcome to the Sudoku Solver!
+# Welcome to the Sudoku Solver! 
 
-This is a work in progress! Check back later for the completed project.
+_(this project is still a work in progress)_
 
-To do:
-- create the find_empty() function
+* This sudoku solver was inspired by my love for sudoku. I wanted to build something that could help me out when I get really stuck on a puzzle.
+* This project is deepening my understanding of backtracking algorithms, recursion and data structures.
+
