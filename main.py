@@ -1,8 +1,20 @@
 import pprint
 
+def is_valid_board(b):
+    if len(b) != 9 or any(len(row) != 9 for row in b):
+        return False
+    for row in b:
+        for cell in row:
+            if not (0 <= cell <= 9):
+                return False
+    return True
+
 def solver(b):
+    if not is_valid_board(b):
+        raise ValueError("Invalid Sudoku board.")
+
     find = find_empty(b)
-    if not find:
+    if not find:  # No empty spots left, puzzle is solved
         return True
 
     row, col = find
@@ -12,10 +24,10 @@ def solver(b):
         if validator(b, (row, col), num):
             b[row][col] = num
 
-            if solver(b):
+            if solver(b):  # Recursive call
                 return True
 
-            b[row][col] = 0
+            b[row][col] = 0  # Backtrack
 
         num += 1
 
